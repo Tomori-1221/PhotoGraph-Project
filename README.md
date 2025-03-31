@@ -19,7 +19,7 @@
 ## 联系方式
 如有任何问题或建议，请通过以下方式联系我们：
 - Email: XiYe1221@outlook.com
-- GitHub: [项目仓库链接](https://github.com/example)
+- GitHub: [项目仓库链接](https://github.com/Tomori-1221/PhotoGraph-Project/tree/main)
 
 ## 版权声明
 所有图像作品均为羽的原创作品，未经允许不得用于商业用途。
