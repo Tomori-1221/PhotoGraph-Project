@@ -1,33 +1,55 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    background-color: #f8f9fa;
+    font-family: 'Poppins', Arial, sans-serif;
+    background: linear-gradient(135deg, #f0f0f0, #d9e4f5);
 }
 
 .photo-wall {
-    column-count: 5; /* 列数 */
-    column-gap: 12px; /* 列间距 */
-    width: 90%;
-    max-width: 1200px;
+    column-count: 4; /* 根据屏幕大小调整列数 */
+    column-gap: 24px;
+    max-width: 1100px;
+    padding: 32px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    margin: 0 auto;
+    position: relative;
 }
 
 .photo-item {
-    margin-bottom: 12px; /* 底部间距 */
+    margin-bottom: 24px;
     break-inside: avoid;
     overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 16px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.5s ease;
+    position: relative;
+    z-index: 1; /* 确保图片层级优先 */
 }
 
 .photo-item img {
     width: 100%;
     height: auto;
     display: block;
-    transition: transform 0.3s ease;
+    transition: transform 0.5s ease, filter 0.5s ease;
+    filter: brightness(85%) saturate(110%);
+}
+
+.photo-item:hover {
+    transform: translateY(-10px) scale(1.2); /* 放大效果更明显 */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    z-index: 2; /* 提升悬停图片的层级 */
 }
 
 .photo-item:hover img {
-    transform: scale(1.5);
+    transform: scale(1.1);
+    filter: brightness(100%) saturate(120%);
+}
+
+.photo-wall:hover .photo-item:not(:hover) {
+    filter: blur(5px); /* 对未悬停的图片添加模糊效果 */
+    transform: scale(1); /* 确保其他图片保持原尺寸 */
+    transition: filter 0.3s ease, transform 0.3s ease;
 }
