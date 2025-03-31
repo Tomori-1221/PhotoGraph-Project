@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    background-color: #f8f9fa;
+}
+
+.photo-wall {
+    column-count: 4; /* 列数 */
+    column-gap: 12px; /* 列间距 */
+    width: 90%;
+    max-width: 1200px;
+}
+
+.photo-item {
+    margin-bottom: 12px; /* 底部间距 */
+    break-inside: avoid;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.photo-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.photo-item:hover img {
+    transform: scale(1.5);
+}
